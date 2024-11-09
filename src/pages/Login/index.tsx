@@ -28,6 +28,9 @@ const Login = () => {
     reValidateMode: "onChange",
   });
 
+  const onSubmit = () => alert("Logado");
+
+  console.log(isValid);
   return (
     <Container>
       <LoginContainer>
@@ -49,7 +52,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" onClick={onSubmit} disabled={!isValid} />
         </Column>
       </LoginContainer>
     </Container>
